@@ -12,3 +12,5 @@
 
 The NBA players data was created the by web scraping Basketball-Reference site <a href="https://www.basketball-reference.com/">Basketball-reference</a>.
 For extract  data of each NBA player in the seasons from 1985 to the current (2020), was also extracted the data of the results (Champion, Award Winners and Top Performers) of all seasons.
+
+# Model

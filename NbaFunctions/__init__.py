@@ -80,3 +80,33 @@ def scrape_all_seasons(base_url):
         print(excp)
 
     return(df_total)
+
+
+def scrape_all_mvp(base_url):
+    '''
+    Function to Extract All NBA seasons Data
+    '''
+    
+    #Libraries
+    import pandas as pd
+    import requests
+    from bs4 import BeautifulSoup
+
+    try:
+        #Request
+        req = requests.get(base_url)
+        
+        #Scrape
+        soup = BeautifulSoup(req.content, 'html.parser')
+        table = soup.find('table', {'id':'mvp_NBA'})
+
+        #Return df
+        df_total = pd.read_html(str(table))[0]
+        df_total.columns = df_total.columns.droplevel()
+    
+    except Exception as excp:
+        #Message
+        print(f'Problem Extracting All Season')
+        print(excp)
+
+    return(df_total)
